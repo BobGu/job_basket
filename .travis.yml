@@ -1,0 +1,10 @@
+language: ruby
+rvm: 2.1.2
+services:
+- postgresql
+before_script:
+- psql -c 'create database job_basket_test;' -U postgres
+script: bundle exec rspec spec
+deploy:
+  api_key:
+    secure: CywnJBW2Th+iuycI1Nx2uwjlat5T5SR2zpK0uZ3MF0mlNk7Scr5+TXBbshj2gexMiVC79MI4/x3NDHVCrJQjxdzTZNCYtxE1p7zs/YcNd7N/wmlgcAzJuStXWOkIXYXtbIHkISKSS7wUIQ5XscNreVa3N/+JNQ6tX1hkRyTA+duPnyNApd3NbaopKyy9e1OJiHwvztw2kbfEf2IcKNQYFO6yhDRNWYiJE2KT0RUj9X7MghAglwEJGEZKcQQkqSBn35BvhGMEFBF2yBJirNKUiVxf4HcGish9cQcGM4h1EqnfuFXcntisyTQUPmeCvWWvwoa3aw1C3JP7qmDO6NlFceVtai/fDo/78VfJG/IQwpcSkZ4Hhw9vUj+ZNHMde1rIcGt8WeskUA4QEDNnJg1ba8tr65MZk5i7R7jp9R7/+uzuvZVeDR6t/RG6Ah+tLlXY5+CwB7DCcuBw6fz08/G/NOCIhYZTe805mC1/nh1E3MyG341moCH8pidD40p78Yjf9b4W3WWyCluvZWRJ5nYukBRC1gwzZ6MlwZmQtDd90QA2vzcQkneAJeZBfPtzXKO89GzqIA42egj8p78G9mHNjLSd7sGpCg94kXH0NWrXFYopAMobjSbgE6CAQJ0vl0/LefH7PvfzbLi9E81cDHiSVO07RmZpA7IKWIMCXKa0oxo=
